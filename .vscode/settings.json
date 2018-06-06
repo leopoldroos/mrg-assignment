@@ -1,0 +1,9 @@
+{
+    "eslint.autoFixOnSave": false,
+    "standard.autoFixOnSave": true,
+    "editor.formatOnSave": false,
+    "editor.scrollBeyondLastLine": false,
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#22935C"
+    },
+}
