@@ -8,13 +8,16 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm run start:server & npm run start:react-app",
+    "start:react-app": "NODE_PATH=src/ react-scripts start",
+    "start:server": "forever -w server/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
     "dotenv": "^6.0.0",
+    "forever": "^0.15.3",
     "standard": "^11.0.1"
   },
   "standard": {
@@ -29,5 +32,5 @@
       "afterAll",
       "afterEach"
     ]
-  }  
+  }
 }
