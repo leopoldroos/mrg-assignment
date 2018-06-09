@@ -1,4 +1,4 @@
-// import Games from 'components/games'
+// import Games from 'components/Games'
 
 describe('Games', () => {
   beforeEach(() => {

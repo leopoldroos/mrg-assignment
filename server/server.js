@@ -7,9 +7,11 @@ app.get('*', (req, res, next) => {
   next()
 })
 
-app.get('/api/games/search', async (req, res) => {
+app.get('/api/search/games', async (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*')
   try {
     const data = await gamesController.search(req)
+    res.type('application/json')
     res.json(data)
   } catch (err) {
     res.type('application/json')

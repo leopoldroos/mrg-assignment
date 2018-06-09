@@ -1,0 +1,21 @@
+.games-list {
+  width: 100%;
+}
+
+.game-card {
+  width: 200px;
+  float: left;
+  postion: relative;
+}
+
+.game-card_image {
+}
+
+.game-card_texts {
+}
+
+.game-card_title {
+}
+
+.game-card_description {
+}
