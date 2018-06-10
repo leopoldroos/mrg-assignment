@@ -10,9 +10,6 @@ class App extends Component {
           <img src='logo-white-shadow.png' className='App-logo' alt='logo' />
           <h1 className='App-title'>Leopolds Assignment</h1>
         </header>
-        <p className='App-intro'>
-          Lets see how my <code>code</code> will develop.
-        </p>
         <Games />
       </div>
     )
