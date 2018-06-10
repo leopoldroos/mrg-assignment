@@ -1,13 +1,11 @@
-// import Games from 'components/Games'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Games from './Games'
 
 describe('Games', () => {
-  beforeEach(() => {
-  })
-
-  afterAll(() => {
-  })
-
-  test('should return null until games are loaded', () => {
-    expect(false).toEqual(true) // This is just a WIP
-  })
+  test('should render', () => {
+    const div = document.createElement('div')
+    ReactDOM.render(<Games />, div)
+    ReactDOM.unmountComponentAtNode(div)
+    })
 })

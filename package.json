@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "expect": "^23.1.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4"
@@ -12,12 +13,16 @@
     "start:react-app": "NODE_PATH=src/ react-scripts start",
     "start:server": "forever -w server/server.js",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "npm run test:non-react & npm run test:react",
+    "test:non-react": "$(yarn bin)/mocha --recursive server/**/*.test.js",
+    "test:react": "NODE_PATH=src/ CI=true react-scripts test --env=jsdom",
+    "test:react-watch": "NODE_PATH=src/ react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
     "dotenv": "^6.0.0",
     "forever": "^0.15.3",
+    "mocha": "^5.2.0",
     "standard": "^11.0.1"
   },
   "standard": {

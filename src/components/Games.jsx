@@ -33,7 +33,7 @@ class Games extends Component {
         tags: allGameTags
       })
     } catch (err) {
-      console.error(err)
+      // console.error(err)
       this.setState({
         tags: []
       })
@@ -53,7 +53,7 @@ class Games extends Component {
         totalHits
       })
     } catch (err) {
-      console.error(err)
+      // console.error(err)
     }
   }
 
