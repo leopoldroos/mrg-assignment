@@ -8,7 +8,7 @@ class Games extends Component {
     super(props)
     this.state = {
       games: [],
-      hasMoreGames: true,
+      hasMoreGames: false,
       limit: 10,
       offset: 0,
       selectedTag: null,
