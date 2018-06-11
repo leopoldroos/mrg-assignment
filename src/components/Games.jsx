@@ -19,6 +19,7 @@ class Games extends Component {
     this.fetchAllCategories = this.fetchAllCategories.bind(this)
     this.fetchMoreGames = this.fetchMoreGames.bind(this)
     this.tagSelected = this.tagSelected.bind(this)
+    this.renderOption = this.renderOption.bind(this)
   }
 
   componentDidMount () {
@@ -59,6 +60,7 @@ class Games extends Component {
 
   tagSelected (tag) {
     const {selectedTag} = this.state
+    tag = tag.toLowerCase()
 
     if (selectedTag !== tag) {
       this.setState({
@@ -69,6 +71,12 @@ class Games extends Component {
         selectedTag: tag
       }, this.fetchMoreGames)
     }
+  }
+
+  renderOption (tag) {
+    const {selectedTag} = this.state
+    tag = tag.toLowerCase()
+    return  <option value={tag} key={tag} selected={selectedTag === tag} >{tag}</option>
   }
 
   render () {
@@ -82,12 +90,9 @@ class Games extends Component {
     return (
       <div>
         <div className='tags'>
-          <select selected={selectedTag} onChange={(ev) => this.tagSelected(ev.target.value)}>
+          <select defaultValue={selectedTag} onChange={(ev) => this.tagSelected(ev.target.value)}>
             <option value=''>Alla</option>
-            {tags.map(tag => (<option
-              value={tag}
-              key={tag}
-              >{tag}</option>))}
+            {tags.map(this.renderOption)}
           </select>
         </div>
         <div className='games-list'>
@@ -96,7 +101,7 @@ class Games extends Component {
               <span className='game-card_image'><img src={imageWrapper({url: game.thumbnailUrl})} alt={game.name} /></span>
               <div className='game-card_texts'>
                 <p className='game-card_title'>{game.name}</p>
-                <p className='game-card_tags'>{game.tags.map(tag => (<span key={tag} className='game-card_tag'>{tag}</span>))}</p>
+                <p className='game-card_tags'>{game.tags.map(tag => (<span key={tag} className='game-card_tag' onClick={(ev) => this.tagSelected(tag)}>{tag}</span>))}</p>
                 {/* <p className="game-card_description">{game.description}</p> */}
               </div>
             </div>

@@ -52,15 +52,19 @@
 }
 
 .game-card_tags {
-  position: absolute;
-  font-size: 8px;
-  z-index: 1;
   bottom: 0px;
+  font-size: 8px;
   left: 10px;
+  position: absolute;
+  z-index: 1;
 }
 
 .game-card_tag {
+  background-color: #fff;
+  border: 1px solid #999;
+  cursor: pointer;
   margin-right: 2px;
+  padding: 1px;
 }
 
 .more-games {
